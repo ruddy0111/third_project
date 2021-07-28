@@ -107,40 +107,127 @@ The above copyright notice and this permission notice shall be included in all c
 	<div class="page-header header-filter clear-filter purple-filter"
 		data-parallax="true" style="background-color: white;">
 		<!-- NEMO LOGO TITLE -->
-			<div class="logo_face"></div>
-			<div class="logo_title"></div>
+		<div class="logo_face"></div>
+		<div class="logo_title"></div>
 	</div>
-	</div>
-	<div class="main main-raised">
-		<div class="section section-basic">
-			<div class="container"></div>
-			<!--                 end buttons		         -->
-		</div>
-	</div>
-	</div>
-	<div class="title"></div>
 	</div>
 
-	<!-- Classic Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Modal title</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<i class="material-icons">clear</i>
-					</button>
+	<!-- 메인 div -->
+	<div class="main main-raised">
+		<div class="section section-basic">
+			<div class="container">
+				<!-- Title -->
+				<div>
+					<label style="font-size: 30px; font-weight: bold;">레시피 등록</a>
 				</div>
-				<div class="modal-body"></div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-link">Nice Button</button>
-					<button type="button" class="btn btn-danger btn-link"
-						data-dismiss="modal">Close</button>
+				<!-- 요리 사진 등록 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">요리 사진 등록</label>
+					<div style="text-align: right;">
+					<input
+						type="button" class="recipe_content" value="사진 업로드" onclick="" />
+					</div>
 				</div>
+				<!-- 레시피 제목 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">레시피 제목</label>
+					<div style="text-align: right;">
+					<input type="text"
+						placeholder="예) 갈비탕 끓이기" onclick="" />
+					
+					</div>
+				</div>
+				<!-- 요리소개 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">요리소개</label>
+					<div style="text-align: right;">
+						<textarea rows="5" cols="50"></textarea>
+					</div>
+				</div>
+				<!-- 카테고리 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">카테고리</label>
+					<div style="text-align: right;">
+						<select style="width: 100px;">
+							<option value="0">종류별</option>
+							<option value="1"></option>
+							<option value="2"></option>
+						</select> <select style="width: 100px;">
+							<option value="0">상황별</option>
+							<option value="1"></option>
+							<option value="2"></option>
+						</select> <select style="width: 100px;">
+							<option value="0">방법별</option>
+							<option value="1"></option>
+							<option value="2"></option>
+						</select> <select style="width: 100px;">
+							<option value="0">재료별</option>
+							<option value="1"></option>
+							<option value="2"></option>
+						</select>
+					</div>
+				</div>
+				<!-- 요리정보 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">요리정보</label>
+					<div>
+						<div style="text-align: right;">
+							<label style="text-align: left; width: 100px;">몇 인분</label>
+							<label style="text-align: left; width: 100px;">조리시간</label>
+							<label style="text-align: left; width: 100px;">난이도</label>
+						</div>
+						<div style="text-align: right;">
+							<select style="width: 100px">
+								<option value="0">1인분</option>
+								<option value="1"></option>
+								<option value="2"></option>
+							</select>
+							<select style="width: 100px">
+								<option value="0">1시간</option>
+								<option value="1"></option>
+								<option value="2"></option>
+							</select> <select style="width: 100px;">
+								<option value="0">A</option>
+								<option value="1"></option>
+								<option value="2"></option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- 재료 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">재료</label>
+					<div>
+						<div style="text-align: right;">
+							<label style="text-align: left; width: 350px;">* 재료가 남지 않도록 정확하게 작성해주세요.</label>
+						</div>
+						<div style="text-align: right;">
+							<input type="text" placeholder="예) 소스 / 재료" onclick="" />
+							<input type="text" placeholder="예) 간장 / 소고기" onclick="" />
+							<input type="text" placeholder="예) 3큰술 / 600g" onclick="" />
+							<input type="button" onclick="" value="+"></>
+							<input type="button" onclick="" value="-"/>
+						</div>
+					</div>
+				</div>
+				<!-- 요리순서 -->
+				<div class="regist_recipe">
+					<label style="text-align: left;">요리순서</label>
+					<div style="text-align: right;">
+						<textarea rows="5" cols="50"></textarea>
+					</div>
+				</div>
+				<!-- 내용 끝 -->
 			</div>
 		</div>
 	</div>
+
+	<!-- 하단부 내용 -->
+	<div class="title"></div>
+	</div>
+
+
+
 	<!--  End Modal -->
 	<footer class="footer" data-background-color="black">
 		<div class="container">
@@ -161,8 +248,8 @@ The above copyright notice and this permission notice shall be included in all c
 					document.write(new Date().getFullYear())
 				</script>
 				, made with <i class="material-icons">favorite</i> by <a
-					href="https://www.creative-tim.com/" target="_blank">Creative
-					Tim</a> for a better web.
+					href="https://www.creative-tim.com/" target="_blank">NemoForU</a>
+				for a better web.
 			</div>
 		</div>
 	</footer>
