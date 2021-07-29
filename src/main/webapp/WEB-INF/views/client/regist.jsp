@@ -31,8 +31,7 @@ The above copyright notice and this permission notice shall be included in all c
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <!-- CSS Files -->
-<link href="/resources/client/assets/css/material-kit.css?v=2.0.7"
-	rel="stylesheet" />
+<link href="/resources/client/assets/css/material-kit.css" rel="stylesheet" />
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="/resources/client/assets/demo/demo.css" rel="stylesheet" />
 </head>
@@ -47,7 +46,7 @@ The above copyright notice and this permission notice shall be included in all c
 			<div class="navbar-translate">
 
 				<!-- 좌상단 제목 -->
-				<a class="navbar-brand" href="/n/client/main">Nemo Recipe </a>
+				<a class="navbar-brand" href="/client/main">Nemo Recipe </a>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +108,6 @@ The above copyright notice and this permission notice shall be included in all c
 		<!-- NEMO LOGO TITLE -->
 		<div class="logo_face"></div>
 		<div class="logo_title"></div>
-	</div>
 	</div>
 
 	<!-- 메인 div -->
@@ -219,6 +217,7 @@ The above copyright notice and this permission notice shall be included in all c
 				</div>
 				<!-- 내용 끝 -->
 			</div>
+			<button class="regist_button">글쓰기 등록</button>
 		</div>
 	</div>
 

@@ -35,6 +35,12 @@ public class ClientController {
 		return "client/regist";
 	}
 	
+	//회원가입 폼 요청처리
+		@RequestMapping(value="/signin", method=RequestMethod.GET)
+		public String signin() {
+			return "client/signin";
+		}
+	
 	//로그인 폼 요청처리
 	@RequestMapping(value="/loginform", method=RequestMethod.GET)
 	public String loginform() {
