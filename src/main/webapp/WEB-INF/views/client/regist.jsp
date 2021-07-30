@@ -60,13 +60,13 @@ The above copyright notice and this permission notice shall be included in all c
 				<ul class="navbar-nav ml-auto">
 					<!-- Home -->
 					<li class="nav-item"><a class="nav-link"
-						href="javascript:void(0)" onclick=""> Home </a></li>
+						href="/client/main" onclick=""> Home </a></li>
 					<!-- Recipe -->
 					<li class="nav-item"><a class="nav-link"
 						href="javascript:void(0)" onclick=""> Recipe </a></li>
 					<!-- Ranking -->
 					<li class="nav-item"><a class="nav-link"
-						href="javascript:void(0)" onclick=""> Ranking </a></li>
+						href="/client/ranking" onclick=""> Ranking </a></li>
 					<!-- MyPage -->
 					<li class="nav-item"><a class="nav-link"
 						href="javascript:void(0)" onclick=""> MyPage </a></li>
