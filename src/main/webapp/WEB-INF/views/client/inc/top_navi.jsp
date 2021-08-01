@@ -45,7 +45,7 @@
 						href="/client/main" onclick=""> Home </a></li>
 					<!-- Recipe -->
 					<li class="nav-item"><a class="nav-link"
-						href="javascript:void(0)" onclick=""> Recipe </a></li>
+						href="/client/list" onclick=""> Recipe </a></li>
 					<!-- Ranking -->
 					<li class="nav-item"><a class="nav-link"
 						href="/client/ranking" onclick=""> Ranking </a></li>

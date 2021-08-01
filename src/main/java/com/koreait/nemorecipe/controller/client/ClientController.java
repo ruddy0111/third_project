@@ -28,14 +28,18 @@ public class ClientController {
 	public String mainForm() {
 		return "client/main";
 	}
-	
+	//글 목록 요청처리
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public String list() {
+		return "client/list";
+	}
 	//글작성화면 요청처리
 	@RequestMapping(value="/regist", method=RequestMethod.GET)
 	public String registForm() {
 		return "client/regist";
 	}
 	
-	//글작성화면 요청처리
+	//랭킹 화면 요청처리
 	@RequestMapping(value="/ranking", method=RequestMethod.GET)
 	public String rankingForm() {
 		return "client/ranking";
