@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%
 	/* List<Board> boardList = boardDAO.selectAll(); //총 레코드수 가져오기 */
-	int totalRecord=boardList.size();//총 게시물 수
+	/* int totalRecord=boardList.size();//총 게시물 수
 	
 	out.print(totalRecord);
 	
@@ -18,9 +18,9 @@
 	int firstPage=currentPage- ((currentPage-1)%blockSize);
 	int lastPage=firstPage+(blockSize-1);
 	int curPos=(currentPage-1)*pageSize;//페이지당 List의 시작 index구하기
-	int num=totalRecord - curPos;
+	int num=totalRecord - curPos; */
 %>
-<%="당신이 보고 잇는 페이지는 "+currentPage+"<br>" %>
+<%-- <%="당신이 보고 잇는 페이지는 "+currentPage+"<br>" %> --%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +39,8 @@
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
 <!-- CSS Files -->
 <link href="/resources/client/assets/css/material-kit.css" rel="stylesheet" />
 <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -83,13 +85,6 @@
     <!-- 메인 검색 창 End -->  
     
     <div class="space-50"></div> <!-- 페이지 공백 -->
-    <!-- 좋아요 순 /조회 순 정렬버튼 Start-->
-    <div class = "button_area">
-	          <input type="button" class="list_button" onclick="" value="LIKE Array">
-	          <input type="button" class="list_button" onclick="" value="View Array">
-    </div>
-    <!-- 좋아요 순 /조회 순 정렬버튼 End -->
-    
     
     <!-- 인기 레시피 View -->
     <div class="section">
@@ -98,7 +93,13 @@
 	      <!-- 중간 제목 -->
 	      <div class="title" style="position: relative;">
 	        <h2 style="float: left;">Nemo Recipe</h2>
-	        <button class="btn btn-success"  style="float: right; margin-top: 30px;">더보기</button>
+	        <!-- 좋아요 순 /조회 순 정렬 Start-->
+	        <div class = "button_area">
+	          <a href="" style="font: dotum;">좋아요 순</a>
+	          <a>/</a>
+	          <a href="">조회 순</a>
+    		</div>
+        	<!-- 좋아요 순 /조회 순 정렬 End -->
 	      </div>
 	      <!-- 중간 제목 End -->
 	      <br>
@@ -123,16 +124,16 @@
 	<div class="space-50"></div> <!-- 페이지 공백 -->
 	<tr>
 		<td colspan="5" style="text-align:center">
-			<a href="/board/list.jsp?currentPage=<%=firstPage-1%>">◀</a>
+		<%-- 	<a href="/board/list.jsp?currentPage=<%=firstPage-1%>">◀</a>
 			<%for(int i=firstPage;i<=lastPage;i++){%>
 				<%if(i>totalPage)break; //i가 총 페이지수를 넘어서면 반복문은 멈춘다 %>
 				<a href="/board/list.jsp?currentPage=<%=i%>" <%if(currentPage==i){%>class="pageNum"<%}%>   >[<%=i%>]</a>
 			<%}%>
-			<a href="/board/list.jsp?currentPage=<%=lastPage+1%>">▶</a>
+			<a href="/board/list.jsp?currentPage=<%=lastPage+1%>">▶</a> --%>
 		</td>
 	</tr>
 	<div class="space-50"></div> <!-- 페이지 공백 -->
-	  <button class="list_button" onClick="location.href='/client/regist';">글쓰기</button>
+	  	<button class="list_button" onClick="location.href='/client/regist';">글쓰기</button>
 	<div class="space-50"></div> <!-- 페이지 공백 -->
 	</div>
 	<!-- 인기 레시피 View End -->
