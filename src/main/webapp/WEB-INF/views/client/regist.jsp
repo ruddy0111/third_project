@@ -219,7 +219,7 @@ The above copyright notice and this permission notice shall be included in all c
 			<div class="space-50"></div> <!-- 페이지 공백 -->
 			<div class="detail_section">
 					<div class="button_area">
-						<input class="pretty_button" type="button" value="글쓰기">
+						<button class="pretty_button" name="registbutton">글 등록</button>
 					</div>
 				</div>
 		</div>

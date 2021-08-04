@@ -22,6 +22,11 @@
 <link href="/resources/client/assets/css/material-kit.css" rel="stylesheet" />
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="/resources/client/assets/demo/demo.css" rel="stylesheet" />
+<script>
+function updated(){  
+      $("#nick").load(window.location.href + "#nick");
+}
+</script>
 </head>
 <!-- 상단 네비게이션 바 -->
 	<nav
@@ -60,8 +65,9 @@
 					<li><a> || </a></li>
 					<%if(member!=null){ %>
 					<!-- 로그인 했을 때 -->
+					<% %>
 					<li class="nav-item"><a class="nav-link"
-						href="#" style="color: orange;"> <%=member.getUser_nickname() %> 님 </a></li>
+						href="/client/updateform" id="nick" style="color: orange;"> <%=member.getUser_nickname() %> 님 </a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/client/logout"> Logout </a></li>
 					<%}else{ %>	

@@ -128,6 +128,20 @@ public class ClientController {
 		return "redirect:/client/loginform";
 	}
 	
+	//회원정보수정 폼 요청처리
+		@RequestMapping(value="/updateform", method=RequestMethod.GET)
+		public String updateform(HttpServletRequest request) {
+			return "client/updateform";
+		}
+	//회원정보수정 요청 처리
+	@PostMapping("/update")
+	public String update(Member member, HttpServletRequest request) {
+		//3단계: 일 시키기
+		memberService.update(member);
+		
+		return "redirect:/client/main";
+	}
+	
 	//레시피 등록
     @RequestMapping(value = "/regist_recipe", method = RequestMethod.POST)
     public String registRecipe(Recipe recipe, HttpServletRequest request) {
