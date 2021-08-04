@@ -87,33 +87,38 @@ The above copyright notice and this permission notice shall be included in all c
 				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 요리 사진 등록 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">요리 사진 등록</label>
+					<div class="title_section" >요리 사진 등록</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
-					  
-					<input type="file" class="recipe_content" name="photo" />
+					<input style="width: 610px" type="file" class="recipe_content" name="photo" />
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 레시피 제목 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">레시피 제목</label>
+					<div class="title_section" >레시피 제목</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
-					<input name="recipe_name" type="text"
+					<input style="width: 610px" name="recipe_name" type="text"
 						placeholder="예) 갈비탕 끓이기" onclick="" />
-					
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 요리소개 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">요리소개</label>
+					<div class="title_section" >요리 소개</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
-						<textarea rows="5" cols="50"></textarea>
+						<textarea rows="5" style="width: 610px"></textarea>
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 카테고리 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">카테고리</label>
+					<div class="title_section" >카테고리</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
-						<select style="width: 100px;" name="type">
+						<select style="width: 150px;" name="type">
 							<option value="종류별" >종류별</option>
 							<option value="메인반찬">메인반찬</option>
 							<option value="밑반찬">밑반찬</option>
@@ -121,7 +126,7 @@ The above copyright notice and this permission notice shall be included in all c
 							<option value="면/밀가루">면/밀가루</option>
 							<option value="밥/죽/떡">밥/죽/떡</option>
 							<option value="기타">기타</option>
-						</select> <select style="width: 100px;" name="situation">
+						</select> <select style="width: 150px;" name="situation">
 							<option value="상황별">상황별</option>
 							<option value="야식">야식</option>
 							<option value="간편">간편</option>
@@ -129,7 +134,7 @@ The above copyright notice and this permission notice shall be included in all c
 							<option value="술안주">술안주</option>
 							<option value="다이어트">다이어트</option>
 							<option value="기타">기타</option>
-						</select> <select style="width: 100px;" name="method">
+						</select> <select style="width: 150px;" name="method">
 							<option value="방법별" >방법별</option>
 							<option value="볶음">볶음</option>
 							<option value="부침">부침</option>
@@ -137,7 +142,7 @@ The above copyright notice and this permission notice shall be included in all c
 							<option value="찜">찜</option>
 							<option value="튀김">튀김</option>
 							<option value="기타">기타</option>
-						</select> <select style="width: 100px;" name="ingredient">
+						</select> <select style="width: 150px;" name="ingredient">
 							<option value="재료별" >재료별</option>
 							<option value="고기류">고기류</option>
 							<option value="채소류">채소류</option>
@@ -147,31 +152,33 @@ The above copyright notice and this permission notice shall be included in all c
 						</select>
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 요리정보 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">요리정보</label>
+					<div class="title_section" >요리 정보</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div>
 						<div style="text-align: right;">
-							<label style="text-align: left; width: 100px;">몇 인분</label>
-							<label style="text-align: left; width: 100px;">조리시간</label>
-							<label style="text-align: left; width: 100px;">난이도</label>
+							<label style="text-align: left; width: 200px;">몇 인분</label>
+							<label style="text-align: left; width: 200px;">조리시간</label>
+							<label style="text-align: left; width: 200px;">난이도</label>
 						</div>
 						<div style="text-align: right;">
-							<select style="width: 100px" name="serving">
+							<select style="width: 200px" name="serving">
 								<option value="1인분">1인분</option>
 								<option value="2~3인분">2~3인분</option>
 								<option value="4~5인분">4~5인분</option>
 								<option value="6~10인분">6~10인분</option>
 								<option value="10인분 이상">10인분 이상</option>
 							</select>
-							<select style="width: 100px" name="time">
+							<select style="width: 200px" name="time">
 								<option value="3분 미만">3분 미만</option>
 								<option value="3분~5분">3분~5분</option>
 								<option value="5분~10분">5분~10분</option>
 								<option value="10분~30분">10분~30분</option>
 								<option value="30분~1시간">30분~1시간</option>
 								<option value="1시간이상">1시간이상</option>
-							</select> <select style="width: 100px;" name="level">
+							</select> <select style="width: 200px;" name="level">
 								<option value="상">상</option>
 								<option value="중">중</option>
 								<option value="하">하</option>
@@ -180,31 +187,41 @@ The above copyright notice and this permission notice shall be included in all c
 						</div>
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 재료 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">재료</label>
+					<div class="title_section" >요리 재료</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div>
 						<div style="text-align: right;">
 							<label style="text-align: left; width: 350px;">* 재료가 남지 않도록 정확하게 작성해주세요.</label>
 						</div>
 						<div style="text-align: right;">
-							<input name="recipe_ingredient" type="text" placeholder="예) 소스 / 재료" onclick="" />
-							<input name="recipe_ingredient" type="text" placeholder="예) 3큰술 / 600g" onclick="" />
+							<input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 소스 / 재료" onclick="" />
+							<input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 3큰술 / 600g" onclick="" />
 							<input type="button" onclick="" value="+"></>
 							<input type="button" onclick="" value="-"/>
 						</div>
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 요리순서 -->
 				<div class="regist_recipe">
-					<label style="text-align: left;">요리순서</label>
+					<div class="title_section" >요리 순서</div>
+					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
-						<textarea name="recipe_order" rows="5" cols="50"></textarea>
+						<textarea name="recipe_order" rows="5" style="width: 610px"></textarea>
 					</div>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 내용 끝 -->
 			</div>
-			<button name="registbutton" class="regist_button">글쓰기 등록</button>
+			<div class="space-50"></div> <!-- 페이지 공백 -->
+			<div class="detail_section">
+					<div class="button_area">
+						<input class="pretty_button" type="button" value="글쓰기">
+					</div>
+				</div>
 		</div>
 	</div>
 
