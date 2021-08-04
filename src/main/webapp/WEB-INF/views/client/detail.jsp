@@ -160,49 +160,10 @@ The above copyright notice and this permission notice shall be included in all c
 					<div class="detail_section">
 						<div style="width: 800px; height:auto; margin: auto;">
 							<textarea class="recipe_order" name="recipe_order" rows="50" readonly="readonly">
-							지금 여기 내가 보더 값을 none으로 해놔서 아무것도 안보이겠지만 사실 textarea가 있단다
-							
-							
-							나는 지금 너무 졸려
-							
-							
-							그래서 커피를 먹었지
-							
-							
-							그리고 밀크티도 먹었어
-							
-							
-							내가 만든거란다
-							
-							
-							스크롤 어디까지 가는지 시험해보고 싶어서
-							
-							
-							
-							계속 쓰고 있단다
 							
 							</textarea>
 							<span>
-							지금 여기 내가 보더 값을 none으로 해놔서 아무것도 안보이겠지만 사실 textarea가 있단다
 							
-							
-							나는 지금 너무 졸려
-							
-							
-							그래서 커피를 먹었지
-							
-							
-							그리고 밀크티도 먹었어
-							
-							
-							내가 만든거란다
-							
-							
-							스크롤 어디까지 가는지 시험해보고 싶어서
-							
-							
-							</br>
-							계속 쓰고 있단다
 							</span>
 						</div>
 					</div>

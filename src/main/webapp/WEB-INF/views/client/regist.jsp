@@ -82,10 +82,10 @@ The above copyright notice and this permission notice shall be included in all c
 			<div class="container">
 				<!-- Title -->
 				<div>
-					<label style="font-size: 30px; font-weight: bold;">레시피 등록</a>
+					<input type="text" style="font-size: 30px; font-weight: bold; border: none;" value="레시피 등록" readonly/>
 				</div>
+				<div class="space-50"></div> <!-- 페이지 공백 -->
 				<!-- 요리 사진 등록 -->
-				
 				<div class="regist_recipe">
 					<label style="text-align: left;">요리 사진 등록</label>
 					<div style="text-align: right;">
@@ -217,32 +217,10 @@ The above copyright notice and this permission notice shall be included in all c
 	</div>
 
 
+	  <!-- footer -->
+	<%@ include file="inc/footer.jsp" %>
+  <!-- footer -->
 
-	<!--  End Modal -->
-	<footer class="footer" data-background-color="black">
-		<div class="container">
-			<nav class="float-left">
-				<ul>
-					<li><a href="https://www.creative-tim.com/"> Creative Tim
-					</a></li>
-					<li><a href="https://www.creative-tim.com/presentation">
-							About Us </a></li>
-					<li><a href="https://www.creative-tim.com/blog"> Blog </a></li>
-					<li><a href="https://www.creative-tim.com/license">
-							Licenses </a></li>
-				</ul>
-			</nav>
-			<div class="copyright float-right">
-				&copy;
-				<script>
-					document.write(new Date().getFullYear())
-				</script>
-				, made with <i class="material-icons">favorite</i> by <a
-					href="https://www.creative-tim.com/" target="_blank">NemoForU</a>
-				for a better web.
-			</div>
-		</div>
-	</footer>
 	<!--   Core JS Files   -->
 	<script src="/resources/client/assets/js/core/jquery.min.js"
 		type="text/javascript"></script>
