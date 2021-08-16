@@ -60,6 +60,18 @@ The above copyright notice and this permission notice shall be included in all c
 		});
 		$("form").submit();
 	}
+	
+	$(document).ready(function() {
+		$('.btnAdd').click(function() {
+			$('.buttons').append('<input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 소스 / 재료" onclick="" /> <input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 3큰술 / 600g" onclick="" /> <input type="button" class="btnRemove" value="─"><br>'); // end append                            
+			$('.btnRemove').on('click', function() {
+				$(this).prev().remove(); // remove the textbox
+				$(this).prev().remove(); // remove the textbox																		
+				$(this).next().remove(); // remove the <br>
+				$(this).remove(); // remove the button
+			});
+		}); // end click                                            
+	}); // end ready
 </script>
 
 </head>
@@ -104,22 +116,14 @@ The above copyright notice and this permission notice shall be included in all c
 					</div>
 				</div>
 				<div class="space-50"></div> <!-- 페이지 공백 -->
-				<!-- 요리소개 -->
-				<div class="regist_recipe">
-					<div class="title_section" >요리 소개</div>
-					<div class="space-50"></div> <!-- 페이지 공백 -->
-					<div style="text-align: right;">
-						<textarea rows="5" style="width: 610px"></textarea>
-					</div>
-				</div>
-				<div class="space-50"></div> <!-- 페이지 공백 -->
+				
 				<!-- 카테고리 -->
 				<div class="regist_recipe">
 					<div class="title_section" >카테고리</div>
 					<div class="space-50"></div> <!-- 페이지 공백 -->
 					<div style="text-align: right;">
 						<select style="width: 150px;" name="type">
-							<option value="종류별" >종류별</option>
+							<option value="종류별">종류별</option>
 							<option value="메인반찬">메인반찬</option>
 							<option value="밑반찬">밑반찬</option>
 							<option value="국/탕/찌개">국/탕/찌개</option>
@@ -128,6 +132,7 @@ The above copyright notice and this permission notice shall be included in all c
 							<option value="기타">기타</option>
 						</select> <select style="width: 150px;" name="situation">
 							<option value="상황별">상황별</option>
+							<option value="식사">식사</option>
 							<option value="야식">야식</option>
 							<option value="간편">간편</option>
 							<option value="손님접대">손님접대</option>
@@ -135,19 +140,23 @@ The above copyright notice and this permission notice shall be included in all c
 							<option value="다이어트">다이어트</option>
 							<option value="기타">기타</option>
 						</select> <select style="width: 150px;" name="method">
-							<option value="방법별" >방법별</option>
+							<option value="방법별">방법별</option>
+							<option value="굽기">굽기</option>
 							<option value="볶음">볶음</option>
+							<option value="끓이기">끓이기</option>
 							<option value="부침">부침</option>
 							<option value="조림">조림</option>
 							<option value="찜">찜</option>
 							<option value="튀김">튀김</option>
 							<option value="기타">기타</option>
 						</select> <select style="width: 150px;" name="ingredient">
-							<option value="재료별" >재료별</option>
+							<option value="재료별">재료별</option>
 							<option value="고기류">고기류</option>
 							<option value="채소류">채소류</option>
 							<option value="해물류">해물류</option>
 							<option value="가공류">가공류</option>
+							<option value="쌀류">쌀류</option>
+							<option value="면">면류</option>
 							<option value="기타">기타</option>
 						</select>
 					</div>
@@ -196,11 +205,10 @@ The above copyright notice and this permission notice shall be included in all c
 						<div style="text-align: right;">
 							<label style="text-align: left; width: 350px;">* 재료가 남지 않도록 정확하게 작성해주세요.</label>
 						</div>
-						<div style="text-align: right;">
+						<div class="buttons" style="text-align: right;">
 							<input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 소스 / 재료" onclick="" />
 							<input style="width: 275px" name="recipe_ingredient" type="text" placeholder="예) 3큰술 / 600g" onclick="" />
-							<input type="button" onclick="" value="+"></>
-							<input type="button" onclick="" value="-"/>
+							<input type="button" class="btnAdd" value="+"><br>
 						</div>
 					</div>
 				</div>

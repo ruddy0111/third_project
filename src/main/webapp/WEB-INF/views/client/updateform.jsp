@@ -112,7 +112,7 @@ function updateUp(){
               
               <!-- Sign in 버튼 -->  
               <div class="footer text-center">
-                <button name="update" class="btn btn-primary btn-link btn-wd btn-lg">modification</button>
+                <button name="update" class="btn btn-primary btn-link btn-wd btn-lg" onclick="alert('회원정보 변경완료 ! 다시 로그인 해주세요')">modification</button>
               </div>
               
             </form>
@@ -122,8 +122,8 @@ function updateUp(){
       </div>
     </div>
     
-<!-- footer -->
-	<%@ include file="inc/footer.jsp" %>
+  <!-- footer -->
+  <%@ include file="inc/footer.jsp" %>
   <!-- footer -->
   </div>
   <!--   Core JS Files   -->

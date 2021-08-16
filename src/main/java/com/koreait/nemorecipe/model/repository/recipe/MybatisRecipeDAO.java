@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.koreait.nemorecipe.domain.Checking;
 import com.koreait.nemorecipe.domain.Recipe;
 import com.koreait.nemorecipe.exception.DMLException;
 
@@ -22,6 +23,50 @@ public class MybatisRecipeDAO implements RecipeDAO{
 		sqlSessionTemplate.insert("recipe.insert", recipe);
 		
 	}
+	
+	@Override
+	public List selectAllMy(int member_id) {
+		return sqlSessionTemplate.selectList("recipe.selectAllMy", member_id);
+	}
+
+	@Override
+	public List search(String word) {
+		return sqlSessionTemplate.selectList("recipe.search", word);
+	}
+	
+	@Override
+	public Checking checkLike(Checking checking) {
+		return sqlSessionTemplate.selectOne("recipe.selectCheckLike", checking);
+	}
+
+	@Override
+	public void registChecking(Checking checking) {
+		sqlSessionTemplate.insert("recipe.insertCheckLike", checking);
+	}
+
+
+	@Override
+	public void updateChecking(int index) {
+		sqlSessionTemplate.update("recipe.updateChecking", index);
+	}
+
+
+	@Override
+	public void addHit(int recipe_id) {
+		sqlSessionTemplate.update("recipe.addHit", recipe_id);
+	}
+
+
+	@Override
+	public List selectAllLike() {
+		return sqlSessionTemplate.selectList("recipe.selectAllLike");
+	}
+
+
+	@Override
+	public List selectAllHit() {
+		return sqlSessionTemplate.selectList("recipe.selectAllHit");
+	}
 
 
 	@Override
@@ -32,8 +77,7 @@ public class MybatisRecipeDAO implements RecipeDAO{
 
 	@Override
 	public Recipe select(int recipe_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSessionTemplate.selectOne("recipe.select", recipe_id);
 	}
 
 
@@ -50,5 +94,8 @@ public class MybatisRecipeDAO implements RecipeDAO{
 		
 	}
 
+
+
+	
 
 }

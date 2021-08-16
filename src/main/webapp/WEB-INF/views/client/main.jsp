@@ -1,6 +1,9 @@
-<%@page import="com.koreait.nemorecipe.domain.Member"%>
+<%@page import="com.koreait.nemorecipe.domain.Recipe"%>
+<%@page import="java.util.List"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
-
+<%
+	List<Recipe> recipeList = (List)request.getAttribute("recipeList");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +27,13 @@
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="/resources/client/assets/demo/demo.css" rel="stylesheet" />
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+function search(){
+	var word = $('#exampleInput1').val();
+	location.href="/client/search?word="+word;
+}
+</script>
 
 <body class="index-page sidebar-collapse">
 
@@ -47,13 +57,15 @@
         <!--                 inputs -->
         <div id="inputs">
           <div style="width: 100%; position: relative; margin-top: -30px">
-	       	<div style="background-image: url('/resources/client/assets/img/nemo_logo_title.png'); background-size: 200px; width: 200px; height: 200px; float: left; margin-top: -50px;"></div>
+	       	<div style="background-image: url('/resources/client/assets/img/nemo_logo/nemo_logo_title.png'); background-size: 200px; width: 200px; height: 200px; float: left; margin-top: -50px;"></div>
 	        <div class="form-group" style="width: 68%; float: left; margin-left: 10px;">
 	          <label for="exampleInput1" class="bmd-label-floating">원하는 레시피를 입력해주세요</label>
-	          <input type="text" class="form-control" id="exampleInput1">
+	          <form>
+	          	<input type="text" class="form-control" id="exampleInput1">
+	          </form>
 	          <span class="bmd-help">네가 좋아할만한 모든 레시피!!</span>
 	        </div>
-	        <button class="btn btn-primary btn-round" style="margin-left: 20px; margin-top: 15px;">Search</button>
+	        <button class="btn btn-primary btn-round" style="margin-left: 20px; margin-top: 15px;" onclick="search();">Search</button>
 	      </div>
         </div>
         <!--                 end inputs -->
@@ -64,7 +76,7 @@
     
     <!-- 슬라이드 View -->
     <div class="section" id="carousel">
-      <div class="container">
+      <div class="" style="width: 1300px; height: 100%; margin-left: auto; margin-right: auto;">
         <div class="row">
           <div class="col-md-8 mr-auto ml-auto">
             <!-- Carousel Card -->
@@ -77,30 +89,30 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="d-block w-100" src="/resources/client/assets/img/bg2.jpg" alt="First slide">
+                    <a href="/client/list"><img class="d-block w-100" style="height: 550px;" src="/resources/client/assets/img/cook.jpg" alt="First slide" itemref="/client/list"></a>
                     <div class="carousel-caption d-none d-md-block">
-                      <h4>
+                      <h3>
                         <i class="material-icons">location_on</i>
-                        Yellowstone National Park, United States
-                      </h4>
+                        당신이 좋아할만한 레시피들을 구경해보세요
+                      </h3>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="/resources/client/assets/img/bg3.jpg" alt="Second slide">
+                    <a href="/client/ranking_hit"><img class="d-block w-100" style="height: 550px;" src="/resources/client/assets/img/ranking/ranking_crop.png" alt="Second slide"></a>
                     <div class="carousel-caption d-none d-md-block">
-                      <h4>
+                      <h3>
                         <i class="material-icons">location_on</i>
-                        Somewhere Beyond, United States
-                      </h4>
+                       	어떤 레시피가 가장 인기가 많을까요?
+                      </h3>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="/resources/client/assets/img/bg.jpg" alt="Third slide">
+                    <a href="/client/detail?recipe_id=<%=recipeList.get(0).getRecipe_id() %>"><img class="d-block w-100" style="height: 550px;" src="/resources/data/<%=recipeList.get(0).getRecipe_img() %>" alt="Third slide"></a>
                     <div class="carousel-caption d-none d-md-block">
-                      <h4>
+                      <h3>
                         <i class="material-icons">location_on</i>
-                        Yellowstone National Park, United States
-                      </h4>
+                        가장 인기있는 레시피!! 한 번 구경해보세요
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -130,7 +142,7 @@
 	      <!-- 중간 제목 -->
 	      <div class="title" style="position: relative;">
 	        <h2 style="float: left;">Nemo Recipe의 인기 레시피</h2>
-	        <button class="btn btn-success"  style="float: right; margin-top: 30px;">더보기</button>
+	        <button class="btn btn-success"  style="float: right; margin-top: 30px;" onClick="location.href='/client/list';">더보기</button>
 	      </div>
 	      <!-- 중간 제목 End -->
 	      <br>
@@ -139,34 +151,20 @@
 	      <!-- 아이템 전체 -->
 	      <div class="row" style="position: relative;">
 	        
+	        <%for(int i=0;i<4;i++){ %>
 	        <!-- 아이템 -->
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem; margin-left: 3rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
+	        <div style="width: 200px; height: 370px; float: left; margin: 0px 2.5rem; margin-left: 2.5rem; text-align: center; cursor: pointer;"  onClick="location.href='/client/detail?recipe_id=<%=recipeList.get(i).getRecipe_id()%>';">
+	          <%if(recipeList.get(i).getRecipe_img().equals("none")){ %>
+        	  <img src="/resources/client/assets/img/noimage.jpg" alt="Rounded Image" class="rounded img-fluid" style="width: 200px; height: 200px">
+        	  <%}else{ %>
+          	  <img src="/resources/data/<%=recipeList.get(i).getRecipe_img() %>" alt="Rounded Image" class="rounded img-fluid" style="width: 200px; height: 200px">
+          	  <%} %>
+	          <h4 class="title" style="text-align: center;"><%=recipeList.get(i).getRecipe_name() %></h4>
+	          <h6 style="text-align: right; color: #00bcd4"><%=recipeList.get(i).getMember().getUser_nickname() %> / <%=recipeList.get(i).getRecipe_date() %></h6>
 	        </div>
+	        <%} %>
 	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
 	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
-	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
 	      </div>
 	      <!-- 아이템 전체 End -->
 	    </div>
@@ -177,62 +175,10 @@
 	<div class="space-50"></div> <!-- 페이지 공백 -->
 	<div class="space-50"></div> <!-- 페이지 공백 -->
 	
-	<!-- 인기 레시피 View -->
-    <div class="section">
-      <div class="container tim-container">
-	    <div id="images">
-	      <!-- 중간 제목 -->
-	      <div class="title" style="position: relative;">
-	        <h2 style="float: left;">Nemo Recipe의 인기 레시피</h2>
-	        <button class="btn btn-success"  style="float: right; margin-top: 30px;">더보기</button>
-	      </div>
-	      <!-- 중간 제목 End -->
-	      <br>
-	      <hr style="border: 1px solid grey;"> <!-- 수평선 -->
-	      <br><br><br>
-	      <!-- 아이템 전체 -->
-	      <div class="row" style="position: relative;">
-	        
-	        <!-- 아이템 -->
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem; margin-left: 3rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
-	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
-	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
-	        
-	        <div style="width: 200px; height: 200px; float: left; margin: 0px 2.5rem;">
-	          <img src="/resources/client/assets/img/faces/avatar.jpg" alt="Rounded Image" class="rounded img-fluid">
-	          <h4 class="title" style="text-align: center;">음식 제목</h4>
-	          <h6>음식 설명</h6>
-	          <h6 style="text-align: right; color: #00bcd4">닉네임/수정날짜</h6>
-	        </div>
-	      </div>
-	      <!-- 아이템 전체 End -->
-	    </div>
-	  </div>
-	</div>
-	<!-- 인기 레시피 View End -->
 	
-	<div class="space-50"></div> <!-- 페이지 공백 -->
-	<div class="space-50"></div> <!-- 페이지 공백 -->
     
     <!-- 마지막 SNS 참조 -->
-    <div class="section section-download" id="downloadSection">
+    <!-- <div class="section section-download" id="downloadSection">
       <div class="container">
         <br><br>
         <div class="sharing-area text-center">
@@ -257,50 +203,17 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 마지막 SNS 참조 End -->
     
   </div>
   <!-- 메인 전체 End -->
   
   
-  <!--  Footer -->
-  <footer class="footer" data-background-color="black">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com/">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/presentation">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/blog">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright float-right">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
-      </div>
-    </div>
-  </footer>
+  <!-- Footer -->
+  <%@ include file="inc/footer.jsp" %>
   <!-- Footer End -->
+  
   
   <!--   Core JS Files   -->
   <script src="/resources/client/assets/js/core/jquery.min.js" type="text/javascript"></script>
